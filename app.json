@@ -3,7 +3,6 @@
   "displayName": "flashCards",
   "expo": {
     "name": "flashCards",
-    "slug": "expo-template-bare",
     "version": "1.0.0",
     "platforms": [
       "ios",
@@ -12,6 +11,19 @@
     ],
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "orientation": "portrait",
+   "description": "Refresh your mind with the decks of cards",
+    "slug": "flashCards",
+     "icon": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fhelp.clover.com%2Fwp-content%2Fuploads%2F2014%2F11%2Forders-app-icon.png&f=1&nofb=1",
+    "notification": {
+       "icon": "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.icons101.com%2Ficon_png%2Fsize_512%2Fid_82114%2FToDo.png&f=1&nofb=1"
+     },
+     "ios": {
+         "bundleIdentifier": "com.jeyansaran620.flashcards"
+      },
+      "android": {
+        "package": "com.jeyansaran620.flashcards"
+      }
   }
 }
