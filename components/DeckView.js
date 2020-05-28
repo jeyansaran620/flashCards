@@ -2,13 +2,10 @@ import React from 'react';
 import { View,Text,StyleSheet,TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 
-class DeckView extends React.Component
-{
-    render()
-    {
-        let { deck , navigation} = this.props 
-        return(
-            <View style={styles.container}>
+const DeckView = ({ deck , navigation }) =>
+{       
+    return(
+          <View style={styles.container}>
                 <View>
                <Text style={styles.heading}>
                 {deck.title}
@@ -31,7 +28,7 @@ class DeckView extends React.Component
         </TouchableOpacity>
             </View>
         )
-    }
+    
 }
 
 const styles = StyleSheet.create({

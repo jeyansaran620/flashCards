@@ -1,9 +1,14 @@
 # flashCards
 This is a Native Aplication build for Android users to make notes of what they learn as decks of questions and they can take quiz with those decks.
-
+  
+  Usage:
+    The application requires only yarn install and yarn start to install and launch. npm can be used in place of yarn.
+    
   Architechture:
+    
+    Platform : It is build for Android and also tested using my androis device.
 
-    Database : It consist of only only Decks Component.
+    Database : It consist of only the Decks Component.
 
     API : It is used to connect with the Database of the AsyncStorage, we can Add a new Deck or add questions to the available Decks.
 

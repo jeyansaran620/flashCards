@@ -1,5 +1,5 @@
 import React from 'react';
-import {View,Text,TouchableOpacity,StyleSheet,TextInput } from 'react-native';
+import {KeyboardAvoidingView,Text,TouchableOpacity,StyleSheet,TextInput } from 'react-native';
 import { connect } from 'react-redux';
 import {addDeck} from '../actions';
 import { submitTitle } from '../utils/api';
@@ -24,14 +24,18 @@ class AddDeck extends React.Component
       }
       else
       {
-        const {dispatch} = this.props; 
-
+        const {dispatch,navigation} = this.props; 
+        
         submitTitle({title})
         .then((deck) => {
             dispatch(addDeck(deck)) 
+            this.setState({title:'',error:''})
+            navigation.navigate( 'Deck',{
+                DeckId : deck.id , title:deck.title
+                })
         })     
-        this.setState({title:'',error:''})
-        this.props.navigation.navigate('Dashboard')
+        
+        
       }
     }
 
@@ -50,7 +54,7 @@ class AddDeck extends React.Component
     render()
     {
         return(
-            <View style={styles.container}>
+            <KeyboardAvoidingView style={styles.container}>
                 <Text style={styles.heading}>Deck Title</Text>
                 <TextInput 
                  style={styles.input}
@@ -61,7 +65,7 @@ class AddDeck extends React.Component
             <TouchableOpacity onPress={() => this.AddToDecks()} style={styles.btn}>
                   <Text style={{color:'white',fontSize:20}}>Add Deck</Text>
               </TouchableOpacity>
-            </View>
+            </KeyboardAvoidingView>
         )
     }
 }
